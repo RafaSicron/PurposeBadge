@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crie uma conta - Purpose</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/signUpPage.css">
 </head>
 <body>
-    <header>
 
-    </header>
-    <main>
+    <main class="signup-main">
+        <div class="signup-box">
+            
+            <img src="../imgs/Logo_global_solution_1_2025-removebg-preview.png" alt="Logo Purpose" class="logo">
 
+            <h1>Crie uma conta</h1>
+            
+            <p class="redirect-link">
+                Já tem uma conta? <a href="loginPage.html">Log in</a>
+            </p>
+
+            <form>
+                <div class="name-row">
+                    <input type="text" placeholder="Primeiro nome">
+                    <input type="text" placeholder="Sobrenome">
+                </div>
+                <input type="text" placeholder="Profissão">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                
+                <div class="terms">
+                    <input type="checkbox" id="terms-checkbox">
+                    <label for="terms-checkbox">Eu concordo com os <a href="#">termos de serviços</a></label>
+                </div>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+
+        </div>
     </main>
-    <footer>
- 
-    </footer>
+
 </body>
 </html>

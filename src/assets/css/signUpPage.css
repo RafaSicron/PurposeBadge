@@ -1,0 +1,116 @@
+.signup-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    margin: 0;
+    max-width: none;
+    background-color: #EAEAEA;
+}
+
+.signup-box {
+    background-color: #4A7C59;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.signup-box h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.redirect-link {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.redirect-link a {
+    color: #A8D5B5;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.signup-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.name-row {
+    display: flex;
+    gap: 15px;
+}
+
+.name-row input {
+    width: 100%;
+}
+
+.signup-box form input[type="text"],
+.signup-box form input[type="email"],
+.signup-box form input[type="password"] {
+    background-color: #82AC8E;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: white;
+    width: 100%;
+}
+
+.signup-box form input::placeholder {
+    color: #E0E0E0;
+    opacity: 0.9;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.terms label a {
+    color: #A8D5B5;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.terms input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--golden-beige);
+}
+
+.signup-box form button {
+    background-color: var(--golden-beige);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.signup-box form button:hover {
+    background-color: #c5935a;
+}
