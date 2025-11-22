@@ -1,0 +1,298 @@
+
+main .introduceSection {
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .introduceTextContainer {
+    align-self: flex-start;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+main .introduceTextContainer span {
+    color: #1B4F72;
+}
+
+main .introduceTextContainer h1 {
+    font-size: 2.125rem;
+}
+
+main .introduceTextContainer p {
+    font-size: 1.625rem;
+}
+
+main .introduceSection img {
+    width: 40%;
+    height: auto;
+}
+
+main .cardProjectsSection {
+    padding: 50px;
+    color: white;
+    background-color: #2F8F6A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .cardProjectsSection h2 {
+    font-size: 20px;
+}
+
+main .cardsContainer {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+}
+
+main .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+main .selo {
+    width: 300px;
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+main .selo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+main .selo-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+main .selo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .selo-header h2 {
+    width: 140px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f1f1f;
+}
+
+main .selo-text {
+    display: flex;
+    align-items: center;
+
+}
+
+main .selo-text span {
+    padding: 4px;
+    text-align: center;
+    border-radius: 10px;
+    width: 80px;
+    font-size: 10px;
+    align-self: flex-start;
+    background-color: #D9A86C;
+}
+
+main .selo-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4e4e4e;
+}
+
+main .selo p {
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+main .selo-button {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    height: 34px;
+    width: 180px;
+    border: none;
+    background-color: #A6D9C5;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+main .selo-button img {
+    width: 20px;
+    height: auto;
+}
+
+main .cardsContainer #newProjectButton {
+    padding: 0px 6px;
+    color: white;
+    background-color: #D9A86C;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 160px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+main .cardsContainer #newProjectButton:hover {
+    background-color: #1B4F72;
+}
+
+main .aboutUsSection {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+
+main .aboutUsText {
+    width: 40%;
+    text-align: center;
+
+
+}
+
+main .aboutUsText h2 {
+    font-size: 2rem;
+}
+
+main .aboutUsText p {
+    font-size: 1.8rem;
+}
+
+
+main .principalGoals {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}
+
+
+main .principalGoals #introduceGoalsText {
+    font-size: 2rem;
+}
+
+main .principalGoals .goals {
+    min-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+
+main .goals .goalContainer {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+main .goals .goalContainer img {
+    width: 104px;
+    height: auto;
+}
+
+main .goals .goalContainer h2 {
+    font-size: 22px;
+}
+
+main .goals .goalContainer p {
+    font-size: 16px;
+}
+
+
+
+@media(max-width: 1439px) {
+    html {
+        font-size: 14px;
+    }
+    main .principalGoals {
+        gap: 60px;
+    }
+}
+
+
+
+@media(max-width: 1130px) {
+    html {
+        font-size: 12px;
+    }
+    main .aboutUsText {
+    width: 60%;
+    }
+    main .cards {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media(max-width: 750px) {
+    main .introduceSection {
+        flex-direction: column;
+        gap: 50px;
+    }
+    main .introduceTextContainer {
+        text-align: center;
+        gap: 20px;
+        align-self: center;
+    }
+     main .aboutUsText {
+    width: 80%;
+    }
+    main .goals .goalContainer {
+        width: 400px;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+
+@media(max-width: 638px) {
+    html {
+        font-size: 10px;
+    }
+    main .goals .goalContainer {
+        width: 200px;
+    }
+    main .introduceTextContainer {
+        width: 80%;
+    }
+    main .aboutUsText {
+    width: 100%;
+    }
+}
