@@ -2,17 +2,19 @@ const userData = JSON.parse(sessionStorage.getItem("userData"));
 const navContainer = document.querySelector(".navigatorContainer");
 const certificadosContainer = document.querySelector(".certificados");
 
+function isUserLoggedIn() {
+    return sessionStorage.getItem("userData") && sessionStorage.getItem("isLoggedIn") === "true";
+}
 
-if (!userData) {
+if (!isUserLoggedIn()) {
     alert("Você precisa estar logado para acessar esta página!");
     window.location.href = "../html/loginPage.html";
 }
 
-
 function renderUserProfile() {
     const updatedUser = JSON.parse(sessionStorage.getItem("userData"));
 
-    if (updatedUser) {
+    if (updatedUser && isUserLoggedIn()) {
         navContainer.innerHTML = `
             <a href="#">Adiquirir os selos</a>
             <div class="user-profile">
@@ -38,15 +40,16 @@ function renderUserProfile() {
         });
 
         logoutBtn.addEventListener("click", () => {
-            sessionStorage.removeItem("userData");
+            sessionStorage.setItem("isLoggedIn", "false");
             window.location.reload();
         });
     }
 }
 
-
 function renderUserProjects() {
-    if (userData) {
+    const user = JSON.parse(sessionStorage.getItem("userData"));
+
+    if (user) {
         const projetos = JSON.parse(sessionStorage.getItem("projetosCandidatos")) || [];
         certificadosContainer.innerHTML = ""; // limpa os cards de exemplo
 

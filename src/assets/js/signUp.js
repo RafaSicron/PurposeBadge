@@ -26,6 +26,7 @@ form.addEventListener("submit", (e) => {
 
 
     sessionStorage.setItem("userData", JSON.stringify(userData))
+    sessionStorage.setItem("isLoggedIn", "true")
 
     window.location.href = "../../index.html"
 })
