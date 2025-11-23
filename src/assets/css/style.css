@@ -59,11 +59,13 @@ main .cards {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
 main .selo {
     width: 300px;
+    height: 400px;
     background-color: white;
     border-radius: 18px;
     overflow: hidden;
@@ -81,50 +83,78 @@ main .selo-content {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
+    flex: 1; 
+    overflow-y: auto; 
 }
 
 main .selo-header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
+
 main .selo-header h2 {
-    width: 140px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: #1f1f1f;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex: 1;
 }
+
+main .selo-header .selo-tag {
+    align-self: flex-start;
+}
+
 
 main .selo-text {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
+main .selo-text p {
+    font-size: 15px;
+    color: #4e4e4e;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: 0;
 }
 
 main .selo-text span {
-    padding: 4px;
-    text-align: center;
+    width: 100px;
+    padding: 8px;
+    font-size: 12px;
     border-radius: 10px;
-    width: 80px;
-    font-size: 10px;
-    align-self: flex-start;
     background-color: #D9A86C;
+    text-align: center; 
 }
 
 main .selo-tag {
     font-size: 13px;
     font-weight: 600;
-    color: #4e4e4e;
+    border: none;
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-main .selo p {
-    font-size: 14px;
-    color: #4e4e4e;
+main .selo-tag:hover {
+    background-color: #A6D9C5;
 }
 
-main .selo-button {
+
+main .selo-button { 
+    margin-top: auto;
     align-self: center;
     display: flex;
     align-items: center;
@@ -139,6 +169,7 @@ main .selo-button {
     border-radius: 16px;
     cursor: pointer;
 }
+
 main .selo-button img {
     width: 20px;
     height: auto;
@@ -255,9 +286,6 @@ main .goals .goalContainer p {
     main .aboutUsText {
     width: 60%;
     }
-    main .cards {
-        flex-wrap: wrap;
-    }
 }
 
 
@@ -296,3 +324,124 @@ main .goals .goalContainer p {
     width: 100%;
     }
 }
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.modal-content p {
+    white-space: normal;       
+    word-break: break-word;    
+    overflow-wrap: break-word; 
+    max-width: 100%;        
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 22px;
+}
+
+
+
+
+
+
+
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 14px;
+    position: relative;
+    animation: showModal 0.25s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@keyframes showModal {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+    transition: 0.2s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border-color: #1B4F72;
+}
+
+
+.modal-content textarea {
+    min-height: 90px;
+    resize: none;
+}
+
+#saveProjectBtn {
+    padding: 12px;
+    background-color: #2F8F6A;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-top: 10px;
+}
+
+#saveProjectBtn:hover {
+    background-color: #1B4F72;
+}
+
+
+
+
+
+

@@ -108,6 +108,11 @@ main {
     color: #1f1f1f;
 }
 
+.selo-header img {
+    width: 40px;
+    height: auto;
+}
+
 .selo-tag {
     font-size: 0.85rem;
     font-weight: 600;
@@ -152,22 +157,6 @@ main {
 }
 
 @media (max-width: 768px) {
-    header {
-        padding: 10px 16px;
-    }
-
-    .headerContainer {
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .navigatorContainer {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
     main {
         margin: 56px auto 60px;
         padding: 28px 18px 60px;
@@ -177,7 +166,7 @@ main {
         padding: 24px;
     }
 
-    .selo img {
+    .selo .img-selo-card {
         height: 140px;
     }
 }
@@ -205,15 +194,12 @@ main {
 }
 
 @media (max-width: 400px) {
-    .navigatorContainer {
-        flex-direction: column;
-    }
-
+    
     .certificados {
         grid-template-columns: 1fr;
     }
 
-    .selo img {
+    .selo .img-selo-card {
         height: 130px;
     }
 

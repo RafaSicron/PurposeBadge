@@ -112,3 +112,51 @@ footer .footerContainer {
 }
 
 
+
+
+
+
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.profile-dropdown p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.profile-dropdown button {
+    margin-top: 10px;
+    padding: 6px 10px;
+    background-color: #2F8F6A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.profile-dropdown button:hover {
+    background-color: #1B4F72;
+}
