@@ -20,7 +20,8 @@ function renderUserProfile() {
                 <div class="profile-dropdown" id="profileDropdown">
                     <p><strong>${userData.firstName} ${userData.lastName}</strong></p>
                     <p>Profissão: ${userData.profession}</p>
-                    <p>Selos: ${userData.email}</p>
+                    <p>Email: ${userData.email}</p>
+                    <p>Selos: ${userData.selos || 0}</p>
                     <button id="logoutBtn">Sair</button>
                 </div>
             </div>

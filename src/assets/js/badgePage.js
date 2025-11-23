@@ -22,7 +22,8 @@ function renderUserProfile() {
                 <div class="profile-dropdown" id="profileDropdown">
                     <p><strong>${updatedUser.firstName} ${updatedUser.lastName}</strong></p>
                     <p>Profissão: ${updatedUser.profession}</p>
-                    <p>Selos: ${updatedUser.badges || 0}</p>
+                    <p>Email: ${userData.email}</p>
+                    <p>Selos: ${userData.selos || 0}</p>
                     <button id="logoutBtn">Sair</button>
                 </div>
             </div>
@@ -86,13 +87,13 @@ function ativarAquisicaoDeSelos() {
         btn.addEventListener("click", () => {
             let dados = JSON.parse(sessionStorage.getItem("userData"));
 
-            dados.badges = (dados.badges || 0) + 1;
+            dados.selos = (dados.selos || 0) + 1;
 
             sessionStorage.setItem("userData", JSON.stringify(dados));
 
             alert("Selo adquirido!");
 
-            renderUserProfile(); 
+            window.location.reload();
         });
     });
 }
