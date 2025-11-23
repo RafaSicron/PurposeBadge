@@ -1,12 +1,8 @@
-// ------------------
-// Seletores principais
-// ------------------
+
 const navContainer = document.querySelector(".navigatorContainer");
 const cardsContainer = document.querySelector(".cards");
 
-// ------------------
-// Renderiza perfil e link para selos
-// ------------------
+
 function renderUserProfile() {
     const userData = JSON.parse(sessionStorage.getItem("userData"));
 
@@ -40,7 +36,7 @@ function renderUserProfile() {
             window.location.reload();
         });
 
-        // Bloqueia acesso à página de selos se não logado
+     
         badgeLink.addEventListener("click", (e) => {
             if (!userData) {
                 e.preventDefault();
@@ -50,9 +46,7 @@ function renderUserProfile() {
     }
 }
 
-// ------------------
-// Modal "Ver mais"
-// ------------------
+
 const seeMoreModal = document.getElementById("seeMoreModal");
 const closeSeeMoreModal = document.getElementById("closeSeeMoreModal");
 const seeMoreModalTitle = document.getElementById("seeMoreModalTittle");
@@ -64,9 +58,7 @@ cardsContainer.addEventListener("click", (e) => {
 
     const userData = JSON.parse(sessionStorage.getItem("userData"));
 
-    // ------------------
-    // Botão "Se candidatar"
-    // ------------------
+   
     if (target.classList.contains("selo-button")) {
         if (!userData) {
             alert("Você precisa estar logado para se candidatar!");
@@ -87,9 +79,7 @@ cardsContainer.addEventListener("click", (e) => {
         alert("Projeto cadastrado com sucesso!");
     }
 
-    // ------------------
-    // Botão "Ver mais"
-    // ------------------
+  
     if (target.classList.contains("ver-mais")) {
         seeMoreModalTitle.textContent = target.dataset.title;
         seeMoreModalDescription.textContent = target.dataset.description;
@@ -101,9 +91,6 @@ closeSeeMoreModal.addEventListener("click", () => {
     seeMoreModal.style.display = "none";
 });
 
-// ------------------
-// Modal "Novo Projeto"
-// ------------------
 const newProjectButton = document.getElementById("newProjectButton");
 const newProjectModal = document.getElementById("newProjectModal");
 const closeNewProjectModal = document.getElementById("closeNewProjectModal");
@@ -172,7 +159,4 @@ saveProjectBtn.addEventListener("click", () => {
     newProjectModal.style.display = "none";
 });
 
-// ------------------
-// Inicializa
-// ------------------
 renderUserProfile();
