@@ -1,12 +1,18 @@
-
 const navContainer = document.querySelector(".navigatorContainer");
 const cardsContainer = document.querySelector(".cards");
 
+function isUserLoggedIn() {
+    return sessionStorage.getItem("userData") && sessionStorage.getItem("isLoggedIn") === "true";
+}
+
+function getUserData() {
+    return JSON.parse(sessionStorage.getItem("userData"));
+}
 
 function renderUserProfile() {
-    const userData = JSON.parse(sessionStorage.getItem("userData"));
+    const userData = getUserData();
 
-    if (userData) {
+    if (userData && isUserLoggedIn()) {
         navContainer.innerHTML = `
             <a href="./assets/html/badgePage.html" id="badgeLink">Adiquirir os selos</a>
             <div class="user-profile">
@@ -14,7 +20,8 @@ function renderUserProfile() {
                 <div class="profile-dropdown" id="profileDropdown">
                     <p><strong>${userData.firstName} ${userData.lastName}</strong></p>
                     <p>Profissão: ${userData.profession}</p>
-                    <p>Selos: ${userData.email}</p>
+                    <p>Email: ${userData.email}</p>
+                    <p>Selos: ${userData.selos || 0}</p>
                     <button id="logoutBtn">Sair</button>
                 </div>
             </div>
@@ -32,20 +39,18 @@ function renderUserProfile() {
         });
 
         logoutBtn.addEventListener("click", () => {
-            sessionStorage.removeItem("userData");
+            sessionStorage.setItem("isLoggedIn", "false");
             window.location.reload();
         });
 
-     
         badgeLink.addEventListener("click", (e) => {
-            if (!userData) {
+            if (!isUserLoggedIn()) {
                 e.preventDefault();
                 alert("Você precisa estar logado para acessar a página de selos!");
             }
         });
     }
 }
-
 
 const seeMoreModal = document.getElementById("seeMoreModal");
 const closeSeeMoreModal = document.getElementById("closeSeeMoreModal");
@@ -56,11 +61,10 @@ cardsContainer.addEventListener("click", (e) => {
     const target = e.target.closest(".selo-button, .ver-mais");
     if (!target) return;
 
-    const userData = JSON.parse(sessionStorage.getItem("userData"));
+    const userData = getUserData();
 
-   
     if (target.classList.contains("selo-button")) {
-        if (!userData) {
+        if (!isUserLoggedIn()) {
             alert("Você precisa estar logado para se candidatar!");
             return;
         }
@@ -79,7 +83,6 @@ cardsContainer.addEventListener("click", (e) => {
         alert("Projeto cadastrado com sucesso!");
     }
 
-  
     if (target.classList.contains("ver-mais")) {
         seeMoreModalTitle.textContent = target.dataset.title;
         seeMoreModalDescription.textContent = target.dataset.description;

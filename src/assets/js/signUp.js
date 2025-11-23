@@ -16,7 +16,8 @@ form.addEventListener("submit", (e) => {
         lastName: lastnameInput.value.trim(),
         profession: professionInput.value.trim(),
         email: emailInput.value.trim(),
-        senha: passwordInput.value.trim()
+        senha: passwordInput.value.trim(),
+        selos: 0
     }
 
     if(Object.values(userData).some(value => value === '') || !termsCheckbox.checked) {
@@ -26,6 +27,7 @@ form.addEventListener("submit", (e) => {
 
 
     sessionStorage.setItem("userData", JSON.stringify(userData))
+    sessionStorage.setItem("isLoggedIn", "true")
 
     window.location.href = "../../index.html"
 })
